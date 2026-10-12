@@ -34,6 +34,449 @@ const COURSES = [
   "Beverage",
 ];
 
+/* ========================
+   STYLES
+   ========================= */
+
+const styles = StyleSheet.create({
+  welcomeSafe: {
+    flex: 1,
+    backgroundColor: "#090909",
+  },
+
+  welcomeScreen: {
+    flex: 1,
+    paddingHorizontal: 28,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#090909",
+  },
+
+  welcomeEyebrow: {
+    color: "#F2E99E",
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 3,
+    marginBottom: 22,
+  },
+
+  welcomeDivider: {
+    width: 65,
+    height: 3,
+    backgroundColor: "#F2E99E",
+    marginBottom: 30,
+  },
+
+  welcomeTitle: {
+    color: "#F6E9A8",
+    fontSize: 48,
+    fontWeight: "900",
+    letterSpacing: 4,
+    textAlign: "center",
+  },
+
+  welcomeSubtitle: {
+    color: "#FFFFFF",
+    fontSize: 25,
+    fontWeight: "700",
+    marginTop: 10,
+    textAlign: "center",
+  },
+
+  welcomeDescription: {
+    color: "#BDBDBD",
+    fontSize: 14,
+    lineHeight: 24,
+    textAlign: "center",
+    marginTop: 24,
+    marginBottom: 38,
+  },
+
+  startButton: {
+    width: "100%",
+    maxWidth: 300,
+    height: 54,
+    backgroundColor: "#F2E99E",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 3,
+  },
+
+  startButtonText: {
+    color: "#191919",
+    fontSize: 15,
+    fontWeight: "900",
+    letterSpacing: 2,
+  },
+
+  welcomeFooter: {
+    color: "#777777",
+    fontSize: 10,
+    fontWeight: "700",
+    letterSpacing: 2,
+    marginTop: 45,
+  },
+
+  addSafe: {
+    flex: 1,
+    backgroundColor: "#090909",
+  },
+
+  addScreen: {
+    flexGrow: 1,
+    backgroundColor: "#090909",
+    paddingHorizontal: 24,
+    paddingVertical: 35,
+    justifyContent: "center",
+  },
+
+  formBox: {
+    width: "100%",
+    maxWidth: 430,
+    alignSelf: "center",
+    paddingVertical: 15,
+  },
+
+  addTitle: {
+    color: "#F6E9A8",
+    fontSize: 29,
+    fontWeight: "800",
+    letterSpacing: 1,
+    marginBottom: 5,
+  },
+
+  addSubtitle: {
+    color: "#D7D1C7",
+    fontSize: 13,
+    marginBottom: 28,
+  },
+
+  label: {
+    color: "#F5F0E8",
+    fontSize: 12,
+    fontWeight: "800",
+    marginBottom: 7,
+    marginTop: 13,
+    letterSpacing: 0.5,
+  },
+
+  input: {
+    height: 50,
+    borderWidth: 1.5,
+    borderColor: "#E8E8E8",
+    borderRadius: 2,
+    color: "#FFFFFF",
+    paddingHorizontal: 13,
+    fontSize: 15,
+    backgroundColor: "#121212",
+  },
+
+  descriptionInput: {
+    height: 82,
+    paddingTop: 12,
+    textAlignVertical: "top",
+  },
+
+  inputError: {
+    borderColor: "#E66D6D",
+  },
+
+  error: {
+    color: "#F38B8B",
+    fontSize: 11,
+    marginTop: 5,
+  },
+
+  dropdown: {
+    height: 50,
+    borderWidth: 1.5,
+    borderColor: "#E8E8E8",
+    borderRadius: 2,
+    paddingHorizontal: 13,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "#121212",
+  },
+
+  placeholderText: {
+    color: "#AFAFAF",
+    fontSize: 14,
+  },
+
+  selectedText: {
+    color: "#FFFFFF",
+    fontSize: 14,
+  },
+
+  arrow: {
+    color: "#FFFFFF",
+    fontSize: 12,
+  },
+
+  dropdownOptions: {
+    borderWidth: 1,
+    borderColor: "#777",
+    backgroundColor: "#1B1B1B",
+  },
+
+  option: {
+    paddingVertical: 12,
+    paddingHorizontal: 13,
+    borderBottomWidth: 1,
+    borderBottomColor: "#343434",
+  },
+
+  optionText: {
+    color: "#FFFFFF",
+    fontSize: 14,
+  },
+
+  priceBox: {
+    height: 50,
+    borderWidth: 1.5,
+    borderColor: "#E8E8E8",
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#121212",
+  },
+
+  rand: {
+    color: "#FFFFFF",
+    fontSize: 15,
+    fontWeight: "800",
+    paddingLeft: 13,
+  },
+
+  priceInput: {
+    flex: 1,
+    color: "#FFFFFF",
+    paddingHorizontal: 9,
+    fontSize: 15,
+  },
+
+  saveButton: {
+    height: 52,
+    backgroundColor: "#F2E99E",
+    marginTop: 28,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 2,
+  },
+
+  saveText: {
+    color: "#191919",
+    fontSize: 14,
+    fontWeight: "900",
+    letterSpacing: 0.7,
+  },
+
+  viewButton: {
+    height: 48,
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: "#F2E99E",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 2,
+  },
+
+  viewText: {
+    color: "#F2E99E",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+
+  /* SUCCESS */
+
+  successSafe: {
+    flex: 1,
+    backgroundColor: "#F7F2E8",
+  },
+
+  successScreen: {
+    flex: 1,
+    paddingHorizontal: 35,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  successHeading: {
+    color: "#25283A",
+    fontSize: 25,
+    fontWeight: "500",
+    letterSpacing: 1,
+    marginBottom: 18,
+  },
+
+  checkCircle: {
+    width: 96,
+    height: 96,
+    borderRadius: 48,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#E8F4C9",
+    marginBottom: 20,
+  },
+
+  check: {
+    color: "#A6D84A",
+    fontSize: 65,
+    fontWeight: "300",
+    marginTop: -6,
+  },
+
+  savedTitle: {
+    color: "#55596D",
+    fontSize: 19,
+    marginBottom: 28,
+  },
+
+  savedText: {
+    color: "#737689",
+    fontSize: 16,
+    textAlign: "center",
+    lineHeight: 26,
+    marginBottom: 38,
+  },
+
+  darkButton: {
+    width: "100%",
+    maxWidth: 340,
+    height: 50,
+    backgroundColor: "#4A506B",
+    marginTop: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  darkButtonText: {
+    color: "#FFFFFF",
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 0.4,
+  },
+
+  /* MENU */
+
+  menuSafe: {
+    flex: 1,
+    backgroundColor: "#090909",
+  },
+
+  menuScreen: {
+    flexGrow: 1,
+    padding: 24,
+    backgroundColor: "#090909",
+  },
+
+  menuEyebrow: {
+    color: "#F2E99E",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 2,
+    marginTop: 15,
+  },
+
+  menuTitle: {
+    color: "#FFFFFF",
+    fontSize: 31,
+    fontWeight: "800",
+    marginTop: 5,
+  },
+
+  menuSubtitle: {
+    color: "#A8A8A8",
+    fontSize: 13,
+    marginTop: 5,
+    marginBottom: 25,
+  },
+
+  noItems: {
+    borderWidth: 1,
+    borderColor: "#4A4A4A",
+    padding: 25,
+    alignItems: "center",
+  },
+
+  noItemsTitle: {
+    color: "#FFFFFF",
+    fontSize: 18,
+    fontWeight: "800",
+  },
+
+  noItemsText: {
+    color: "#A8A8A8",
+    marginTop: 7,
+    textAlign: "center",
+  },
+
+  menuCard: {
+    backgroundColor: "#F7F2E8",
+    padding: 16,
+    marginBottom: 12,
+    borderLeftWidth: 4,
+    borderLeftColor: "#F2E99E",
+  },
+
+  menuCardTop: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  menuNumber: {
+    color: "#4A506B",
+    fontWeight: "900",
+    fontSize: 14,
+    width: 25,
+  },
+
+  menuNameArea: {
+    flex: 1,
+  },
+
+  menuDish: {
+    color: "#24252D",
+    fontSize: 17,
+    fontWeight: "800",
+  },
+
+  menuCourse: {
+    color: "#7D6F37",
+    fontSize: 11,
+    fontWeight: "800",
+    marginTop: 3,
+  },
+
+  menuPrice: {
+    color: "#24252D",
+    fontSize: 15,
+    fontWeight: "900",
+  },
+
+  menuDescription: {
+    color: "#686A73",
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 10,
+    marginLeft: 25,
+  },
+
+  goldButton: {
+    height: 50,
+    backgroundColor: "#F2E99E",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+  },
+
+  goldButtonText: {
+    color: "#181818",
+    fontWeight: "900",
+    fontSize: 13,
+  },
+});
+
 export default function App() {
   const [screen, setScreen] = useState<Screen>("welcome");
 
