@@ -159,4 +159,34 @@ export default function App() {
   );
  }
 
+ /* =========================
+     SUCCESS SCREEN
+     ========================= */
+
+  if (screen === "success") {
+    return (
+      <SafeAreaView style={{flex: 1, backgroundColor: "#090909"}}>
+        <StatusBar barStyle="light-content"/>
+        <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
+          <Text style={{color: "#F2E99E", fontSize: 32}}>
+            DISH ADDED SUCCESSFULLY!!
+          </Text>
+
+          <Pressable
+          onPress={() => setScreen("add")}
+          style={{
+            backgroundColor: "#f2E99E",
+            padding: 15,
+            marginTop: 20,
+          }}
+          >
+            <Text style={{color: "#181818", fontWeight: "bold"}}>
+              ADD ANOTHER DISH
+            </Text>
+          </Pressable>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
 }
