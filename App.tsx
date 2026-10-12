@@ -287,4 +287,229 @@ export default function App() {
     );
   }
 
+  /* =========================
+     ADD MENU ITEM SCREEN
+     ========================= */
+
+  return (
+    <SafeAreaView style={styles.addSafe}>
+
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="#090909"
+      />
+
+      <ScrollView
+        contentContainerStyle={styles.addScreen}
+        keyboardShouldPersistTaps="handled"
+      >
+
+        <View style={styles.formBox}>
+
+          <Text style={styles.addTitle}>
+            ADD MENU ITEM
+          </Text>
+
+          <Text style={styles.addSubtitle}>
+            Add a dish to your restaurant menu
+          </Text>
+
+          {/* DISH NAME */}
+
+          <Text style={styles.label}>
+            DISH NAME
+          </Text>
+
+          <TextInput
+            style={[
+              styles.input,
+              errors.dishName &&
+                styles.inputError,
+            ]}
+            placeholder="e.g. Chicken Pasta"
+            placeholderTextColor="#9E9E9E"
+            value={dishName}
+            onChangeText={(value) => {
+              setDishName(value);
+
+              setErrors((oldErrors) => ({
+                ...oldErrors,
+                dishName: "",
+              }));
+            }}
+          />
+
+          {showError(errors.dishName)}
+
+          {/* DESCRIPTION */}
+
+          <Text style={styles.label}>
+            DESCRIPTION
+          </Text>
+
+          <TextInput
+            style={[
+              styles.input,
+              styles.descriptionInput,
+              errors.description &&
+                styles.inputError,
+            ]}
+            placeholder="Enter a description"
+            placeholderTextColor="#9E9E9E"
+            multiline
+            value={description}
+            onChangeText={(value) => {
+              setDescription(value);
+
+              setErrors((oldErrors) => ({
+                ...oldErrors,
+                description: "",
+              }));
+            }}
+          />
+
+          {showError(errors.description)}
+
+          {/* COURSE */}
+
+          <Text style={styles.label}>
+            COURSE
+          </Text>
+
+          <Pressable
+            style={[
+              styles.dropdown,
+              errors.course &&
+                styles.inputError,
+            ]}
+            onPress={() =>
+              setCourseOpen((value) => !value)
+            }
+          >
+
+            <Text
+              style={
+                course
+                  ? styles.selectedText
+                  : styles.placeholderText
+              }
+            >
+              {course || "Select Course"}
+            </Text>
+
+            <Text style={styles.arrow}>
+              {courseOpen ? "▲" : "▼"}
+            </Text>
+
+          </Pressable>
+
+          {courseOpen && (
+
+            <View style={styles.dropdownOptions}>
+
+              {COURSES.map((item) => (
+
+                <Pressable
+                  key={item}
+                  style={styles.option}
+                  onPress={() => {
+
+                    setCourse(item);
+                    setCourseOpen(false);
+
+                    setErrors((oldErrors) => ({
+                      ...oldErrors,
+                      course: "",
+                    }));
+
+                  }}
+                >
+
+                  <Text style={styles.optionText}>
+                    {item}
+                  </Text>
+
+                </Pressable>
+
+              ))}
+
+            </View>
+
+          )}
+
+          {showError(errors.course)}
+
+          {/* PRICE */}
+
+          <Text style={styles.label}>
+            PRICE
+          </Text>
+
+          <View
+            style={[
+              styles.priceBox,
+              errors.price &&
+                styles.inputError,
+            ]}
+          >
+
+            <Text style={styles.rand}>
+              R
+            </Text>
+
+            <TextInput
+              style={styles.priceInput}
+              placeholder="0.00"
+              placeholderTextColor="#9E9E9E"
+              keyboardType="decimal-pad"
+              value={price}
+              onChangeText={(value) => {
+
+                setPrice(value);
+
+                setErrors((oldErrors) => ({
+                  ...oldErrors,
+                  price: "",
+                }));
+
+              }}
+            />
+
+          </View>
+
+          {showError(errors.price)}
+
+          {/* SAVE */}
+
+          <Pressable
+            style={styles.saveButton}
+            onPress={saveItem}
+          >
+
+            <Text style={styles.saveText}>
+              SAVE ITEM
+            </Text>
+
+          </Pressable>
+
+          {/* VIEW MENU */}
+
+          <Pressable
+            style={styles.viewButton}
+            onPress={() => setScreen("menu")}
+          >
+
+            <Text style={styles.viewText}>
+              VIEW MENU
+            </Text>
+
+          </Pressable>
+
+        </View>
+
+      </ScrollView>
+
+    </SafeAreaView>
+  );
+
 }
