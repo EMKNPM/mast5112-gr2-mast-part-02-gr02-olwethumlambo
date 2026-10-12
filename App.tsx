@@ -189,4 +189,102 @@ export default function App() {
     );
   }
 
+  /* =========================
+     MENU SCREEN
+     ========================= */
+
+  if (screen === "menu") {
+    return (
+      <SafeAreaView style={styles.menuSafe}>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="#090909"
+        />
+
+        <ScrollView
+          contentContainerStyle={styles.menuScreen}
+        >
+
+          <Text style={styles.menuEyebrow}>
+            CHEF'S MENU
+          </Text>
+
+          <Text style={styles.menuTitle}>
+            MENU LIST
+          </Text>
+
+          <Text style={styles.menuSubtitle}>
+            All menu items added to your restaurant
+          </Text>
+
+          {menuItems.length === 0 ? (
+
+            <View style={styles.noItems}>
+
+              <Text style={styles.noItemsTitle}>
+                No menu items yet
+              </Text>
+
+              <Text style={styles.noItemsText}>
+                Add your first dish to see it here.
+              </Text>
+
+            </View>
+
+          ) : (
+
+            menuItems.map((item, index) => (
+
+              <View
+                style={styles.menuCard}
+                key={item.id}
+              >
+
+                <View style={styles.menuCardTop}>
+
+                  <Text style={styles.menuNumber}>
+                    {index + 1}
+                  </Text>
+
+                  <View style={styles.menuNameArea}>
+
+                    <Text style={styles.menuDish}>
+                      {item.name}
+                    </Text>
+
+                    <Text style={styles.menuCourse}>
+                      {item.course}
+                    </Text>
+
+                  </View>
+
+                  <Text style={styles.menuPrice}>
+                    R {item.price}
+                  </Text>
+
+                </View>
+
+                <Text style={styles.menuDescription}>
+                  {item.description}
+                </Text>
+
+              </View>
+
+            ))
+          )}
+
+          <Pressable
+            style={styles.goldButton}
+            onPress={addAnother}
+          >
+            <Text style={styles.goldButtonText}>
+              ADD ANOTHER ITEM
+            </Text>
+          </Pressable>
+
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
 }
