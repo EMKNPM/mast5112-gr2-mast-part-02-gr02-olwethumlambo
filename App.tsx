@@ -119,4 +119,44 @@ export default function App() {
       </Text>
     );
   };
+
+  // WELCOME PAGE
+ if (screen === "welcome") {
+  return (
+    <SafeAreaView style={styles.welcomeSafe}>
+      <StatusBar barStyle="light-content" backgroundColor="#090909" />
+
+      <View style={styles.welcomeScreen}>
+        <Text style={styles.welcomeEyebrow}>
+          CHEF'S MENU MANAGER
+        </Text>
+
+        <View style={styles.welcomeDivider} />
+
+        <Text style={styles.welcomeTitle}>ADMIN</Text>
+
+        <Text style={styles.welcomeSubtitle}>
+          My Menu Manager
+        </Text>
+
+        <Text style={styles.welcomeDescription}>
+          Manage your restaurant menu in one place.{"\n"}
+          Add dishes, organise courses, and manage prices.
+        </Text>
+
+        <Pressable
+          style={styles.startButton}
+          onPress={() => setScreen("add")}
+        >
+          <Text style={styles.startButtonText}>START</Text>
+        </Pressable>
+
+        <Text style={styles.welcomeFooter}>
+          YOUR MENU. YOUR MANAGEMENT.
+        </Text>
+      </View>
+    </SafeAreaView>
+  );
+ }
+
 }
